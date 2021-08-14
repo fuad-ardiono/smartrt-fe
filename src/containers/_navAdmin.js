@@ -13,6 +13,12 @@ export const navAdmin = [
         name: 'Perkawinan',
         to: '/perkawinan',
         icon: 'cil-people'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Perceraian',
+        to: '/perceraian',
+        icon: 'cil-people'
       }
     ]
   }

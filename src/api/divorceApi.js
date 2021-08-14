@@ -1,7 +1,7 @@
 import {getApi, postApiFormData, putApi} from "./api";
 
-export const divorceApiIndex = (page, perPage, name, token) => {
-    return getApi(`divorce?page=${page}&perPage=${perPage}&name=${name}`, token)
+export const divorceApiIndex = (page, perPage, token) => {
+    return getApi(`divorce?page=${page}&perPage=${perPage}`, token)
 }
 
 export const divorceApiDetail = (id, token) => {

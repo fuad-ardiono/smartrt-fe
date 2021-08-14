@@ -101,6 +101,10 @@
                   <p id="maritalPlace"><span class="mr-3">:</span>{{ marital.married_place }}</p>
                 </CRow>
                 <CRow class="m-1">
+                  <p class="labelInput">Tanggal Pernikahan</p>
+                  <p id="maritalDate"><span class="mr-3">:</span>{{ marital.married_date }}</p>
+                </CRow>
+                <CRow class="m-1">
                   <p class="labelInput">Buku Nikah Suami</p>
                   <p id="husbandMaritalAttachment"><span class="mr-3">:</span><img width="200" height="200" :src="marital.husband_marital_attachment" alt=""></p>
                 </CRow>

@@ -65,6 +65,10 @@ const Marital = () => import('@/views/marital/Index')
 const MaritalReview = () => import('@/views/marital/Show')
 const MaritalLetter = () => import('@/views/marital/MaritalLetter')
 
+// Perceraian - Admin, User
+const Divorce = () => import('@/views/divorce/Index')
+const DivorceReview = () => import('@/views/divorce/Show')
+const DivorceLetter = () => import('@/views/divorce/DivorceLetter')
 Vue.use(Router)
 
 function configRoutes() {
@@ -106,6 +110,24 @@ function configRoutes() {
                     path: 'perkawinan/review/:id',
                     name: 'Review Perkawinan',
                     component: MaritalReview,
+                    meta: {
+                        auth: true,
+                        role: ["admin", "user"]
+                    }
+                },
+                {
+                    path: 'perceraian',
+                    name: 'Indeks Perceraian',
+                    component: Divorce,
+                    meta: {
+                        auth: true,
+                        role: ["admin", "user"]
+                    }
+                },
+                {
+                    path: 'perceraian/review/:id',
+                    name: 'Review Perceraian',
+                    component: DivorceReview,
                     meta: {
                         auth: true,
                         role: ["admin", "user"]
@@ -353,6 +375,12 @@ function configRoutes() {
             path: '/perkawinan/surat/:id',
             name: 'Surat Perkawinan',
             component: MaritalLetter,
+            props: true
+        },
+        {
+            path: '/perceraian/surat/:id',
+            name: 'Surat Perceraian',
+            component: DivorceLetter,
             props: true
         },
         {

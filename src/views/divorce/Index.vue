@@ -2,11 +2,12 @@
   <div>
     <CCard>
       <CCardHeader>
-        List Perkawinan
+        List Perceraian
       </CCardHeader>
       <CCardBody>
-        <div id="maritalList">
-          <v-client-table ref="maritalListRef" :data="dataTable.tableData" :columns="dataTable.columns" :options="dataTable.options">
+        <div id="divorceList">
+          <v-client-table ref="divorceListRef" :data="dataTable.tableData" :columns="dataTable.columns"
+                          :options="dataTable.options">
             <div slot="status.status" slot-scope="{row}">
               <span class="badge bg-success text-white" v-if="row.status.status === 'Approved'">
                 {{ row.status.status }}
@@ -17,8 +18,14 @@
               <span class="badge bg-danger text-white" v-else>{{ row.status.status }}</span>
             </div>
             <div slot="action" slot-scope="{row}">
-              <CButton class="mr-2" color="primary" @click="$router.push(`/perkawinan/review/${row.id}`)"><CIcon name="cil-find-in-page"></CIcon> Review</CButton>
-              <CButton color="info" @click="$router.push(`/perkawinan/surat/${row.id}`)"><CIcon name="cil-print"></CIcon> Print</CButton>
+              <CButton class="mr-2" color="primary" @click="$router.push(`/perceraian/review/${row.id}`)">
+                <CIcon name="cil-find-in-page"></CIcon>
+                Review
+              </CButton>
+              <CButton color="info" @click="$router.push(`/perceraian/surat/${row.id}`)">
+                <CIcon name="cil-print"></CIcon>
+                Print
+              </CButton>
             </div>
           </v-client-table>
         </div>
@@ -29,18 +36,18 @@
 
 <script>
 import {notyError} from "../../utils/noty";
-import {maritalApiIndex} from "../../api/maritalApi";
+import {divorceApiIndex} from "../../api/divorceApi";
 
 export default {
   name: "Index",
   data: () => ({
     dataTable: {
-      columns: ['husband_name', 'wife_name', 'marital_number', 'status.status', 'action'],
+      columns: ['name', 'divorce_number', 'marital_number', 'status.status', 'action'],
       tableData: [],
       options: {
         headings: {
-          husband_name: 'Nama Suami',
-          wife_name: 'Nama Istri',
+          name: 'Nama Pengaju Cerai',
+          divorce_number: 'Nomor Akta Perceraian',
           marital_number: 'Nomor Akta Perkawinan',
           'status.status': "Status",
           action: 'Aksi'
@@ -48,24 +55,24 @@ export default {
         perPage: 10,
         perPageValues: [10, 20, 30, 50],
         sortable: ['name'],
-        filterable: ['husband_name', 'wife_name', 'marital_number', 'status.status']
+        filterable: ['name', 'divorce_number', 'marital_number', 'status.status']
       }
     }
   }),
   methods: {
-    async fetchMaritalList() {
+    async fetchDivorce() {
       try {
-        const { record } = await maritalApiIndex(1, 100000, this.$store.getters.auth.token)
+        const {record} = await divorceApiIndex(1, 100000, this.$store.getters.auth.token)
 
-        return await record
+        return record
       } catch (e) {
-        notyError("Gagal fetch list marital")
+        notyError("Gagal fetch list perceraian")
       }
     },
     async syncDataTable() {
-      this.$refs.maritalListRef.setLoadingState(true)
-      this.dataTable.tableData = await this.fetchMaritalList()
-      this.$refs.maritalListRef.setLoadingState(false)
+      this.$refs.divorceListRef.setLoadingState(true)
+      this.dataTable.tableData = await this.fetchDivorce()
+      this.$refs.divorceListRef.setLoadingState(false)
     }
   },
   async mounted() {
