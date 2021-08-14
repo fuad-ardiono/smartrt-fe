@@ -11,7 +11,7 @@ export const navSuperAdmin = [
       {
         _name: 'CSidebarNavItem',
         name: 'Administrator',
-        to: '/administrators',
+        to: '/administrator',
         icon: 'cil-user'
       }
     ]

@@ -9,9 +9,16 @@ import store from './store'
 import 'noty/lib/themes/mint.css'
 import 'noty/lib/noty.css'
 
+import {ServerTable, ClientTable} from 'vue-tables-2';
+
 Vue.config.performance = true
 Vue.use(CoreuiVue)
 Vue.prototype.$log = console.log.bind(console)
+
+// eslint-disable-next-line
+Vue.use(ClientTable);
+// eslint-disable-next-line
+Vue.use(ServerTable);
 
 new Vue({
   el: '#app',

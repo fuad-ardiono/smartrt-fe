@@ -6,3 +6,11 @@
 ul, .c-sidebar-nav {
   font-weight: bold;
 }
+
+.VueTables__search-field {
+  display: flex;
+}
+
+.VueTables__search-field, label {
+  margin-right: 1rem;
+}
