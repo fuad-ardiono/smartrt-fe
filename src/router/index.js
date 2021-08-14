@@ -77,7 +77,10 @@ function configRoutes () {
         {
           path: 'home',
           name: 'Home',
-          component: Home
+          component: Home,
+          meta: {
+            auth: false
+          }
         },
         {
           path: 'theme',

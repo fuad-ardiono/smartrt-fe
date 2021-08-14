@@ -1,1 +1,8 @@
 // Here you can add other styles
+.c-sidebar-nav-item:hover, a:hover {
+  background-color: rgba(33, 85, 217, 0.91) !important;
+}
+
+ul, .c-sidebar-nav {
+  font-weight: bold;
+}

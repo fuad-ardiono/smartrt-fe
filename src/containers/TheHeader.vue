@@ -18,7 +18,8 @@
       </CHeaderNavItem>
     </CHeaderNav>
     <CHeaderNav class="mr-4">
-      <TheHeaderDropdownAccnt/>
+      <TheHeaderDropdownAccnt v-if="$store.getters.auth.authenticated"/>
+      <CButton type="submit" size="sm" color="info" v-else @click="$router.push('/login')">Masuk</CButton>
     </CHeaderNav>
     <CSubheader class="px-3">
       <CBreadcrumbRouter class="border-0 mb-0"/>

@@ -7,5 +7,9 @@ module.exports = {
         corejs: 3
       }
     ]
-  ]
+  ],
+  plugins: [
+    ["@babel/transform-runtime"]
+  ],
+  "sourceType": "unambiguous"
 }

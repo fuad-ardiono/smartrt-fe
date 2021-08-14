@@ -4,12 +4,13 @@
     :minimize="minimize"
     :show="show"
     @update:show="(value) => $store.commit('set', ['sidebarShow', value])"
+    style="background-color: #39f"
   >
     <CSidebarBrand class="d-md-down-none" to="/">
       Aplikasi Perkawinan dan Perceraian
     </CSidebarBrand>
 
-    <CRenderFunction flat :content-to-render="$options.nav"/>
+    <CRenderFunction flat :content-to-render="navList"/>
     <CSidebarMinimizer
       class="d-md-down-none"
       @click.native="$store.commit('set', ['sidebarMinimize', !minimize])"
@@ -18,11 +19,13 @@
 </template>
 
 <script>
-import nav from './_nav'
-
 export default {
   name: 'TheSidebar',
-  nav,
+  props: {
+    navList: {
+      type: Array
+    }
+  },
   computed: {
     show () {
       return this.$store.state.sidebarShow 

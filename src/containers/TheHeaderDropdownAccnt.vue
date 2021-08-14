@@ -25,8 +25,8 @@
     <CDropdownItem>
       <CIcon name="cil-user" /> Profile
     </CDropdownItem>
-    <CDropdownItem>
-      <CIcon name="cil-lock-locked" /> Logout
+    <CDropdownItem @click="logout">
+      <CIcon name="cil-lock-locked"/> Logout
     </CDropdownItem>
   </CDropdown>
 </template>
@@ -37,6 +37,12 @@ export default {
   data () {
     return { 
       itemsCount: 42
+    }
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("authLogout")
+      this.$store.dispatch("setSidebarList")
     }
   }
 }

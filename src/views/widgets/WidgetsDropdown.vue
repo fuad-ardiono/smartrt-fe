@@ -63,6 +63,7 @@
           </div>
         </template>
       </CWidgetDropdown>
+      <PieChart :data="dataDummy.chartData" title-props="Data Perkawinan"></PieChart>
     </CCol>
     <CCol sm="6" lg="3">
       <CWidgetDropdown color="info" header="9.823" text="Data Perkawinan">
@@ -72,6 +73,7 @@
           </div>
         </template>
       </CWidgetDropdown>
+      <PieChart :data="dataDummy.chartData" title-props="Data Perceraian"></PieChart>
     </CCol>
     <CCol sm="6" lg="3">
       <CWidgetDropdown
@@ -90,7 +92,21 @@
 </template>
 
 <script>
+import PieChart from "../../components/PieChart";
+
 export default {
   name: 'WidgetsDropdown',
+  components: {PieChart},
+  data: () => ({
+    dataDummy: {
+      chartData: [
+        ['Year', 'Sales', 'Expenses', 'Profit'],
+        ['2014', 1000, 400, 200],
+        ['2015', 1170, 460, 250],
+        ['2016', 660, 1120, 300],
+        ['2017', 1030, 540, 350]
+      ]
+    }
+  })
 }
 </script>

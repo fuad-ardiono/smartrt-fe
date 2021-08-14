@@ -1,6 +1,6 @@
 <template>
   <div class="c-app">
-    <TheSidebar/>
+    <TheSidebar :nav-list="$store.getters.sidebarList"/>
     <CWrapper>
       <TheHeader/>
       <div class="c-body">

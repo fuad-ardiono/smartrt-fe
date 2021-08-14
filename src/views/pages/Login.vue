@@ -7,48 +7,46 @@
             <CCard class="p-4">
               <CCardBody>
                 <CForm>
-                  <h1>Login</h1>
-                  <p class="text-muted">Sign In to your account</p>
+                  <h1>Masuk</h1>
+                  <p class="text-muted">Masuk ke akun anda</p>
                   <CInput
-                    placeholder="Username"
+                    placeholder="NIK"
                     autocomplete="username email"
+                    v-model="form.nik"
                   >
                     <template #prepend-content><CIcon name="cil-user"/></template>
                   </CInput>
                   <CInput
-                    placeholder="Password"
+                    placeholder="Kata Sandi"
                     type="password"
                     autocomplete="curent-password"
+                    v-model="form.password"
                   >
                     <template #prepend-content><CIcon name="cil-lock-locked"/></template>
                   </CInput>
                   <CRow>
                     <CCol col="6" class="text-left">
-                      <CButton color="primary" class="px-4">Login</CButton>
-                    </CCol>
-                    <CCol col="6" class="text-right">
-                      <CButton color="link" class="px-0">Forgot password?</CButton>
-                      <CButton color="link" class="d-lg-none">Register now!</CButton>
+                      <CButton color="info" class="px-4" @click="userLogin">Masuk</CButton>
                     </CCol>
                   </CRow>
                 </CForm>
               </CCardBody>
             </CCard>
             <CCard
-              color="primary"
+              color="info"
               text-color="white"
               class="text-center py-5 d-md-down-none"
               body-wrapper
             >
               <CCardBody>
-                <h2>Sign up</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h4>Belum memiliki akun?</h4>
                 <CButton
                   color="light"
                   variant="outline"
                   size="lg"
+                  class="mt-3"
                 >
-                  Register Now!
+                  Daftar sekarang!
                 </CButton>
               </CCardBody>
             </CCard>
@@ -60,7 +58,27 @@
 </template>
 
 <script>
+import {notyError, notySuccess} from "../../utils/noty";
+
 export default {
-  name: 'Login'
+  name: 'Login',
+  data: () => ({
+    form: {
+      nik: '',
+      password: ''
+    }
+  }),
+  methods: {
+    async userLogin() {
+      try {
+        await this.$store.dispatch('authLogin', this.form)
+        notySuccess("Login berhasil")
+        this.$router.push('/home')
+      } catch (e) {
+        console.log(e)
+        notyError("NIK atau password salah")
+      }
+    }
+  }
 }
 </script>
