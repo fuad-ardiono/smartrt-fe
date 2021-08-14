@@ -6,7 +6,7 @@ import Dashboard from '@/views/Dashboard'
 
 Vue.use(CoreuiVue)
 
-describe('Dashboard.vue', () => {
+describe('Home.vue', () => {
   it('has a name', () => {
     expect(Dashboard.name).toBe('Dashboard')
   })

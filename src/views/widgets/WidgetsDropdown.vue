@@ -1,127 +1,88 @@
 <template>
   <CRow>
     <CCol sm="6" lg="3">
-      <CWidgetDropdown color="primary" header="9.823" text="Members online">
-        <template #default>
-          <CDropdown
-            color="transparent p-0"
-            placement="bottom-end"
-          >
-            <template #toggler-content>
-              <CIcon name="cil-settings"/>
-            </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
-          </CDropdown>
-        </template>
+      <CCard>
+        <CCardHeader>
+          <strong>Filter</strong>
+        </CCardHeader>
+        <CForm novalidate>
+          <CCardBody>
+            <CInput
+                label="Tanggal Awal"
+                type="date"
+            />
+            <CInput
+                label="Tanggal Akhir"
+                type="date"
+            />
+            <CSelect
+                label="Provinsi"
+                size="md"
+                :value.sync="selectedOption"
+                :options="selectOptions"
+                placeholder="Pilih Provinsi"
+            />
+            <CSelect
+                label="Kota"
+                size="md"
+                :value.sync="selectedOption"
+                :options="selectOptions"
+                placeholder="Pilih Kota"
+            />
+            <CSelect
+                label="Kecamatan"
+                size="md"
+                :value.sync="selectedOption"
+                :options="selectOptions"
+                placeholder="Pilih Kecamatan"
+            />
+            <CSelect
+                label="Kelurahan"
+                size="md"
+                :value.sync="selectedOption"
+                :options="selectOptions"
+                placeholder="Pilih Kelurahan"
+            />
+            <CSelect
+                label="Rukun Tetangga"
+                size="md"
+                :value.sync="selectedOption"
+                :options="selectOptions"
+                placeholder="Pilih RT"
+            />
+
+          </CCardBody>
+        </CForm>
+      </CCard>
+    </CCol>
+    <CCol sm="6" lg="3">
+      <CWidgetDropdown color="primary" header="9.823" text="Total Data">
         <template #footer>
-          <CChartLineSimple
-            pointed
-            class="mt-3 mx-3"
-            style="height:70px"
-            :data-points="[65, 59, 84, 84, 51, 55, 40]"
-            point-hover-background-color="primary"
-            label="Members"
-            labels="months"
-          />
+          <div style="width: 100%; height: 6rem; text-align: center;">
+            <CIcon name="cil-calculator" style="margin-top: 2rem;width: 2rem; height: 2rem"></CIcon>
+          </div>
         </template>
       </CWidgetDropdown>
     </CCol>
     <CCol sm="6" lg="3">
-      <CWidgetDropdown color="info" header="9.823" text="Members online">
-        <template #default>
-          <CDropdown
-            color="transparent p-0"
-            placement="bottom-end"
-            :caret="false"
-          >
-            <template #toggler-content>
-              <CIcon name="cil-location-pin"/>
-            </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
-          </CDropdown>
-        </template>
+      <CWidgetDropdown color="info" header="9.823" text="Data Perkawinan">
         <template #footer>
-          <CChartLineSimple
-            pointed
-            class="mt-3 mx-3"
-            style="height:70px"
-            :data-points="[1, 18, 9, 17, 34, 22, 11]"
-            point-hover-background-color="info"
-            :options="{ elements: { line: { tension: 0.00001 }}}"
-            label="Members"
-            labels="months"
-          />
-        </template>
-      </CWidgetDropdown>
-    </CCol>
-    <CCol sm="6" lg="3">
-      <CWidgetDropdown
-        color="warning"
-        header="9.823"
-        text="Members online"
-      >
-        <template #default>
-          <CDropdown
-            color="transparent p-0"
-            placement="bottom-end"
-          >
-            <template #toggler-content>
-              <CIcon name="cil-settings"/>
-            </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
-          </CDropdown>
-        </template>
-        <template #footer>
-          <CChartLineSimple
-            class="mt-3"
-            style="height:70px"
-            background-color="rgba(255,255,255,.2)"
-            :data-points="[78, 81, 80, 45, 34, 12, 40]"
-            :options="{ elements: { line: { borderWidth: 2.5 }}}"
-            point-hover-background-color="warning"
-            label="Members"
-            labels="months"
-          />
+          <div style="width: 100%; height: 6rem; text-align: center;">
+            <CIcon name="cib-hackhands" style="margin-top: 2rem;width: 2rem; height: 2rem"></CIcon>
+          </div>
         </template>
       </CWidgetDropdown>
     </CCol>
     <CCol sm="6" lg="3">
       <CWidgetDropdown
-        color="danger"
-        header="9.823"
-        text="Members online"
+          color="danger"
+          header="9.823"
+          text="Data Perceraian"
       >
-        <template #default>
-          <CDropdown
-            color="transparent p-0"
-            placement="bottom-end"
-          >
-            <template #toggler-content>
-             <CIcon name="cil-settings"/>
-            </template>
-            <CDropdownItem>Action</CDropdownItem>
-            <CDropdownItem>Another action</CDropdownItem>
-            <CDropdownItem>Something else here...</CDropdownItem>
-            <CDropdownItem disabled>Disabled action</CDropdownItem>
-          </CDropdown>
-        </template>
         <template #footer>
-          <CChartBarSimple
-            class="mt-3 mx-3"
-            style="height:70px"
-            background-color="rgb(250, 152, 152)"
-            label="Members"
-            labels="months"
-          />
+          <div style="width: 100%; height: 6rem; text-align: center;">
+            <CIcon name="cib-hackhands" style="margin-top: 2rem;width: 2rem; height: 2rem"></CIcon>
+          </div>
         </template>
       </CWidgetDropdown>
     </CCol>
@@ -129,10 +90,7 @@
 </template>
 
 <script>
-import { CChartLineSimple, CChartBarSimple } from '../charts/index.js'
-
 export default {
   name: 'WidgetsDropdown',
-  components: { CChartLineSimple, CChartBarSimple }
 }
 </script>
