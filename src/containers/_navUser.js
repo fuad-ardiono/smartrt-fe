@@ -7,6 +7,18 @@ export const navUser =  [
         name: 'Home',
         to: '/home',
         icon: 'cil-home'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Perkawinan',
+        to: '/perkawinan',
+        icon: 'cil-people'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Perceraian',
+        to: '/perceraian',
+        icon: 'cil-people'
       }
     ]
   }

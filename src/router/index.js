@@ -375,13 +375,21 @@ function configRoutes() {
             path: '/perkawinan/surat/:id',
             name: 'Surat Perkawinan',
             component: MaritalLetter,
-            props: true
+            props: true,
+            meta: {
+                auth: true,
+                role: ["admin", "user"]
+            }
         },
         {
             path: '/perceraian/surat/:id',
             name: 'Surat Perceraian',
             component: DivorceLetter,
-            props: true
+            props: true,
+            meta: {
+                auth: true,
+                role: ["admin", "user"]
+            }
         },
         {
             path: '/login',

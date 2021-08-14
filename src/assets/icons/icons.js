@@ -135,7 +135,7 @@ export const iconsSet = Object.assign(
         cilXCircle,
         cilHome,
         cilPrint,
-        cilFindInPage
+        cilFindInPage,
     },
     {
         cifUs,
