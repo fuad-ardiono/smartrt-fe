@@ -18,12 +18,9 @@
 </template>
 
 <script>
-// import {userApiAdminDelete, userApiAdminUserList} from "../../api/userApi";
-import {notyError, notySuccess} from "../../utils/noty";
-import Swal from "sweetalert2"
+import {notyError} from "../../utils/noty";
 import {userApiAdminDelete, userApiAdminUserList} from "../../api/userApi";
 import {confirmDelete} from "../../utils/sweetalert";
-// import {validate} from "../../utils/validator";
 
 
 export default {
@@ -65,8 +62,6 @@ export default {
       if (confirmed) {
         await userApiAdminDelete(id, this.$store.getters.auth.token)
         await this.syncDataTable()
-      } else {
-        notySuccess("Proses delete di batalkan")
       }
     }
   },

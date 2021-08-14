@@ -1,6 +1,7 @@
 import {authApiCurrentUser, authApiLogin} from "./api/authApi";
 import { navSuperAdmin } from "./containers/_navSuperAdmin";
 import { navUser } from "./containers/_navUser";
+import { navAdmin } from "./containers/_navAdmin"
 
 export default {
     async authLogin({dispatch, commit, getters}, data) {
@@ -43,7 +44,7 @@ export default {
                     commit('SIDEBAR_SET_LIST', navSuperAdmin)
                     break
                 case 'admin':
-                    commit('SIDEBAR_SET_LIST', navUser)
+                    commit('SIDEBAR_SET_LIST', navAdmin)
             }
         } else {
             commit('SIDEBAR_SET_LIST', navUser)

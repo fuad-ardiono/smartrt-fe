@@ -28,6 +28,15 @@ const getters = {
   },
   sidebarList: state => {
     return state.sidebarList
+  },
+  isRoleAdmin: state => {
+    return state.auth.user.role.name === 'admin'
+  },
+  isRoleSuperAdmin: state => {
+    return state.auth.user.role.name === 'superadmin'
+  },
+  isRoleUser: state => {
+    return state.auth.user.role.name === 'user'
   }
 }
 

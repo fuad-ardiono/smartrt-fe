@@ -60,31 +60,12 @@ const User = () => import('@/views/users/User')
 
 // Administrator - Admin
 const Administrator = () => import('@/views/administrator/Index')
+// Perkawinan - Admin, User
+const Marital = () => import('@/views/marital/Index')
+const MaritalReview = () => import('@/views/marital/Show')
+const MaritalLetter = () => import('@/views/marital/MaritalLetter')
 
 Vue.use(Router)
-
-const router = new Router({
-    mode: 'hash', // https://router.vuejs.org/api/#mode
-    linkActiveClass: 'active',
-    scrollBehavior: () => ({y: 0}),
-    routes: configRoutes()
-})
-
-router.beforeEach((to, from, next) => {
-    if (to.meta.auth) {
-        if (store.getters.auth.authenticated) {
-            if (to.meta.role.includes(store.getters.auth.user.role.name)) {
-                next()
-                return
-            }
-        }
-        next('/')
-        return
-    }
-    next()
-    return
-})
-
 
 function configRoutes() {
     return [
@@ -105,11 +86,29 @@ function configRoutes() {
                 },
                 {
                     path: 'administrator',
-                    name: 'Administrator',
+                    name: 'Indeks Administrator',
                     component: Administrator,
                     meta: {
                         auth: true,
                         role: ["superadmin"]
+                    }
+                },
+                {
+                    path: 'perkawinan',
+                    name: 'Indeks Perkawinan',
+                    component: Marital,
+                    meta: {
+                        auth: true,
+                        role: ["admin", "user"]
+                    }
+                },
+                {
+                    path: 'perkawinan/review/:id',
+                    name: 'Review Perkawinan',
+                    component: MaritalReview,
+                    meta: {
+                        auth: true,
+                        role: ["admin", "user"]
                     }
                 },
                 {
@@ -351,6 +350,12 @@ function configRoutes() {
             ]
         },
         {
+            path: '/perkawinan/surat/:id',
+            name: 'Surat Perkawinan',
+            component: MaritalLetter,
+            props: true
+        },
+        {
             path: '/login',
             name: 'Login',
             component: Login
@@ -384,5 +389,28 @@ function configRoutes() {
         }
     ]
 }
+
+const router = new Router({
+    mode: 'hash', // https://router.vuejs.org/api/#mode
+    linkActiveClass: 'active',
+    scrollBehavior: () => ({y: 0}),
+    routes: configRoutes()
+})
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.auth) {
+        console.log(to.meta.auth)
+        if (store.getters.auth.authenticated) {
+            if (to.meta.role.includes(store.getters.auth.user.role.name)) {
+                next()
+                return
+            }
+        }
+        next('/')
+        return
+    }
+    next()
+    return
+})
 
 export default router

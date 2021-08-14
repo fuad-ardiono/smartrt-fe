@@ -14,3 +14,18 @@ ul, .c-sidebar-nav {
 .VueTables__search-field, label {
   margin-right: 1rem;
 }
+
+.VueTables__limit-field {
+  display: flex;
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.detailInput, .labelInput {
+  margin-right: 2rem;
+  max-width: 100%;
+  width: 10%;
+}

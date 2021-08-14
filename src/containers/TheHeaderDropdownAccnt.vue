@@ -43,6 +43,7 @@ export default {
     logout() {
       this.$store.dispatch("authLogout")
       this.$store.dispatch("setSidebarList")
+      this.$router.push('/')
     }
   }
 }
