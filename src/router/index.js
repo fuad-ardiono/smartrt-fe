@@ -68,6 +68,7 @@ const MaritalLetter = () => import('@/views/marital/MaritalLetter')
 
 // Perceraian - Admin, User
 const Divorce = () => import('@/views/divorce/Index')
+const DivorceCreate = () => import('@/views/divorce/Create')
 const DivorceReview = () => import('@/views/divorce/Show')
 const DivorceLetter = () => import('@/views/divorce/DivorceLetter')
 Vue.use(Router)
@@ -132,6 +133,15 @@ function configRoutes() {
                     meta: {
                         auth: true,
                         role: ["admin", "user"]
+                    }
+                },
+                {
+                    path: 'perceraian/ajukan',
+                    name: 'Pengajuan Perceraian',
+                    component: DivorceCreate,
+                    meta: {
+                        auth: true,
+                        role: ["user"]
                     }
                 },
                 {
