@@ -10,7 +10,7 @@ export const navUser =  [
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Perkawinan',
+        name: 'Data Perkawinan',
         to: '/perkawinan',
         icon: 'cil-people'
       },
@@ -22,7 +22,7 @@ export const navUser =  [
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Perceraian',
+        name: 'Data Perceraian',
         to: '/perceraian',
         icon: 'cil-people'
       },
