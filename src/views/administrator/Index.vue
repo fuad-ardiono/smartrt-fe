@@ -2,7 +2,7 @@
   <div>
     <CCard>
       <CCardHeader>
-        List Administrator
+        Data Administrator
       </CCardHeader>
       <CCardBody>
         <div id="adminList">

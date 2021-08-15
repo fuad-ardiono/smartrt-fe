@@ -2,7 +2,7 @@
   <div>
     <CCard>
       <CCardHeader>
-        List Perkawinan
+        Data Perkawinan
       </CCardHeader>
       <CCardBody>
         <div id="maritalList">
