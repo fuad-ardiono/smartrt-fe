@@ -6,14 +6,6 @@
 
 <script>
 import WidgetsDropdown from './widgets/WidgetsDropdown'
-import {statisticApiGetChartData, statisticApiGetTotalData} from "../api/statisticApi";
-import {notyError} from "../utils/noty";
-import {
-  locationApiCityList,
-  locationApiDistrictList, locationApiNeighbourhoodList,
-  locationApiProvinceList,
-  locationApiVillageList
-} from "../api/locationApi";
 
 export default {
   name: 'Dashboard',
