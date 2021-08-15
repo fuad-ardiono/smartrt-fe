@@ -140,7 +140,6 @@ import {
   locationApiVillageList
 } from "../../api/locationApi";
 import {validate} from "../../utils/validator";
-import {divorceApiCreate} from "../../api/divorceApi";
 import {authApiCreateUser} from "../../api/authApi";
 
 export default {
