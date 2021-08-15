@@ -9,67 +9,80 @@
           <CInput
               label="Nama Suami"
               v-model="maritals.husband_name"
+              placeholder="Masukkan nama suami"
               horizontal
           />
           <CInput
               label="NIK Suami"
+              placeholder="Masukkan NIK suami"
               v-model="maritals.husband_nik"
               horizontal
           />
           <CInput
               label="Tempat Lahir Suami"
+              placeholder="Masukkan tempat lahir suami"
               v-model="maritals.husband_birth_place"
               horizontal
           />
           <CInput
               label="Tanggal Lahir Suami"
+              placeholder="Masukkan tanggal lahir suami"
               v-model="maritals.husband_birth_date"
               type="date"
               horizontal
           />
           <CInput
               label="Kewarganegaraan Suami"
+              placeholder="Masukkan kewarganegaran suami"
               v-model="maritals.husband_nationality"
               horizontal
           />
           <CInput
               label="Agama Suami"
+              placeholder="Masukkan agama suami"
               v-model="maritals.husband_religion"
               horizontal
           />
           <CInput
               label="Nama Istri"
+              placeholder="Masukkan nama istri"
               v-model="maritals.wife_name"
               horizontal
           />
           <CInput
               label="NIK Istri"
+              placeholder="Masukkan NIK Istri"
               v-model="maritals.wife_nik"
               horizontal
           />
           <CInput
               label="Tempat Lahir Istri"
+              placeholder="Masukkan tempat lahir istri"
               v-model="maritals.wife_birth_place"
               horizontal
           />
           <CInput
               label="Tanggal Lahir Istri"
+              placeholder="Masukkan tanggal lahir istri"
               v-model="maritals.wife_birth_date"
               type="date"
               horizontal
           />
           <CInput
               label="Kewarganegaran Istri"
+              placeholder="Masukkan kewarganegaraan istri"
               v-model="maritals.wife_nationality"
               horizontal
           />
           <CInput
               label="Agama Istri"
+              placeholder="Masukkan agama istri"
               v-model="maritals.wife_religion"
               horizontal
           />
           <CInput
               label="Alamat"
+              placeholder="Masukkan alamat"
               v-model="maritals.address"
               horizontal
           />
@@ -78,6 +91,7 @@
             <v-select label="name"
                       :clearable="false" v-model="select.provinceId"
                       :options="list.provinceList"
+                      placeholder="Pilih Provinsi"
                       :reduce="province => province.id"
                       class="col-sm-9 p-0"
                       @input="fetchCity">
@@ -89,6 +103,7 @@
                       :disabled="select.provinceId === ''"
                       :clearable="false"
                       v-model="select.cityId"
+                      placeholder="Pilih Kota"
                       :options="list.cityList"
                       :reduce="city => city.id"
                       class="col-sm-9 p-0"
@@ -101,6 +116,7 @@
                       :disabled="select.cityId === ''"
                       :clearable="false"
                       v-model="select.districtId"
+                      placeholder="Pilih Kecamatan"
                       :options="list.districtList"
                       :reduce="district => district.id"
                       class="col-sm-9 p-0"
@@ -113,6 +129,7 @@
                       :disabled="select.districtId === ''"
                       :clearable="false"
                       v-model="select.villageId"
+                      placeholder="Pilih Kelurahan"
                       :options="list.villageList"
                       :reduce="village => village.id"
                       class="col-sm-9 p-0"
@@ -125,6 +142,7 @@
                       :disabled="select.villageId === ''"
                       :clearable="false"
                       v-model="select.neighbourhoodId"
+                      placeholder="Pilih RT"
                       :options="list.neighbourhoodList"
                       :reduce="neighbourhood => neighbourhood.id"
                       class="col-sm-9 p-0">
@@ -132,22 +150,26 @@
           </div>
           <CInput
               label="Nomor Akta Perkawinan"
+              placeholder="Masukkan nomor akta perkawinan"
               v-model="maritals.marital_number"
               horizontal
           />
           <CInput
               label="Nomor Seri Perkawinan"
+              placeholder="Masukkan nomor seri perkawinan"
               v-model="maritals.marital_serial_number"
               horizontal
           />
           <CInput
               label="Tanggal Perkawinan"
+              placeholder="Masukkan tanggal perkawinan"
               v-model="maritals.married_date"
               type="date"
               horizontal
           />
           <CInput
               label="Tempat Perkawinan"
+              placeholder="Masukkan tempat perkawinan"
               v-model="maritals.married_place"
               horizontal
           />

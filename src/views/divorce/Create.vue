@@ -8,16 +8,19 @@
         <CForm>
           <CInput
               label="Nama Pengaju Cerai"
+              placeholder="Masukkan nama pengaju cerai"
               v-model="divorces.name"
               horizontal
           />
           <CInput
               label="NIK"
+              placeholder="Masukkan NIK"
               v-model="divorces.nik"
               horizontal
           />
           <CInput
               label="Tempat Lahir"
+              placeholder="Masukkan tempat lahir"
               v-model="divorces.birth_place"
               horizontal
           />
@@ -29,11 +32,13 @@
           />
           <CInput
               label="Agama"
+              placeholder="Masukkan agama"
               v-model="divorces.religion"
               horizontal
           />
           <CInput
               label="Alamat"
+              placeholder="Masukkan alamat"
               v-model="divorces.address"
               horizontal
           />
@@ -42,6 +47,7 @@
             <v-select label="name"
                       :clearable="false" v-model="select.provinceId"
                       :options="list.provinceList"
+                      placeholder="Pilih Provinsi"
                       :reduce="province => province.id"
                       class="col-sm-9 p-0"
                       @input="fetchCity">
@@ -53,6 +59,7 @@
                       :disabled="select.provinceId === ''"
                       :clearable="false"
                       v-model="select.cityId"
+                      placeholder="Pilih Kota"
                       :options="list.cityList"
                       :reduce="city => city.id"
                       class="col-sm-9 p-0"
@@ -65,6 +72,7 @@
                       :disabled="select.cityId === ''"
                       :clearable="false"
                       v-model="select.districtId"
+                      placeholder="Pilih Kecamatan"
                       :options="list.districtList"
                       :reduce="district => district.id"
                       class="col-sm-9 p-0"
@@ -77,6 +85,7 @@
                       :disabled="select.districtId === ''"
                       :clearable="false"
                       v-model="select.villageId"
+                      placeholder="Pilih Kelurahan"
                       :options="list.villageList"
                       :reduce="village => village.id"
                       class="col-sm-9 p-0"
@@ -88,6 +97,7 @@
             <v-select label="name"
                       :disabled="select.villageId === ''"
                       :clearable="false"
+                      placeholder="Pilih RT"
                       v-model="select.neighbourhoodId"
                       :options="list.neighbourhoodList"
                       :reduce="neighbourhood => neighbourhood.id"
@@ -96,16 +106,19 @@
           </div>
           <CInput
               label="Nomor Akta Perceraian"
+              placeholder="Masukkan nomor akta perceraian"
               v-model="divorces.divorce_number"
               horizontal
           />
           <CInput
               label="Nomor Seri Perceraian"
+              placeholder="Masukkan nomor seri perceraian"
               v-model="divorces.divorce_serial_number"
               horizontal
           />
           <CInput
               label="Nomor Akta Perkawinan"
+              placeholder="Masukkan nomor akta perkawinan"
               v-model="divorces.marital_number"
               horizontal
           />
@@ -117,6 +130,7 @@
           />
           <CInput
               label="Tempat Perceraian"
+              placeholder="Masukkan tempat perceraian"
               v-model="divorces.divorce_place"
               horizontal
           />
