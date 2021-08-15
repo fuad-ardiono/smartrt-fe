@@ -16,9 +16,21 @@ export const navUser =  [
       },
       {
         _name: 'CSidebarNavItem',
+        name: 'Ajukan Perkawinan',
+        to: '/perkawinan/ajukan',
+        icon: 'cil-file'
+      },
+      {
+        _name: 'CSidebarNavItem',
         name: 'Perceraian',
         to: '/perceraian',
         icon: 'cil-people'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Ajukan Perceraian',
+        to: '/perceraian/ajukan',
+        icon: 'cil-file'
       }
     ]
   }

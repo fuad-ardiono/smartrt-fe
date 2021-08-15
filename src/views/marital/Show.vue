@@ -153,7 +153,7 @@
           <CButton class="mx-1" color="danger" @click="rejectMarital(marital.id)">Reject</CButton>
           <CButton class="mx-1" color="primary" @click="$router.go(-1)">Kembali</CButton>
         </div>
-        <div v-else>
+        <div class="container py-3 pb-4" v-else>
           <CButton class="mx-1" color="primary" @click="$router.go(-1)">Kembali</CButton>
         </div>
       </CCol>

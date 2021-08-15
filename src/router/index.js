@@ -62,6 +62,7 @@ const User = () => import('@/views/users/User')
 const Administrator = () => import('@/views/administrator/Index')
 // Perkawinan - Admin, User
 const Marital = () => import('@/views/marital/Index')
+const MaritalCreate = () => import('@/views/marital/Create')
 const MaritalReview = () => import('@/views/marital/Show')
 const MaritalLetter = () => import('@/views/marital/MaritalLetter')
 
@@ -113,6 +114,15 @@ function configRoutes() {
                     meta: {
                         auth: true,
                         role: ["admin", "user"]
+                    }
+                },
+                {
+                    path: 'perkawinan/ajukan',
+                    name: 'Pengajuan Perkawinan',
+                    component: MaritalCreate,
+                    meta: {
+                        auth: true,
+                        role: ["user"]
                     }
                 },
                 {
