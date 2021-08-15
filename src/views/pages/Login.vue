@@ -45,6 +45,7 @@
                   variant="outline"
                   size="lg"
                   class="mt-3"
+                  @click="$router.push('/user/buat')"
                 >
                   Daftar sekarang!
                 </CButton>
