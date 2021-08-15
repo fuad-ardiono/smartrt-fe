@@ -7,12 +7,9 @@
   >
     <template #toggler>
       <CHeaderNavLink>
-        <div class="c-avatar">
-          <img
-            src="img/avatars/6.jpg"
-            class="c-avatar-img "
-          />
-        </div>
+        <p>{{ $store.getters.auth.user.name }} | {{ $store.getters.auth.user.role.name.charAt(0).toUpperCase() +
+          $store.getters.auth.user.role.name.slice(1)
+          }} <CIcon name="cil-user" style="height: 25px; width: 25px;"></CIcon></p>
       </CHeaderNavLink>
     </template>
     <CDropdownHeader
