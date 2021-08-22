@@ -54,12 +54,12 @@ const Page500 = () => import('@/views/pages/Page500')
 const Login = () => import('@/views/pages/Login')
 const Register = () => import('@/views/pages/Register')
 
-// Users
-const Users = () => import('@/views/users/Users')
-const User = () => import('@/views/users/User')
+// Users - Guest
+const UserCreate = () => import('@/views/users/Create')
 
 // Administrator - Admin
 const Administrator = () => import('@/views/administrator/Index')
+const AdministratorCreate = () => import('@/views/administrator/Create')
 // Perkawinan - Admin, User
 const Marital = () => import('@/views/marital/Index')
 const MaritalCreate = () => import('@/views/marital/Create')
@@ -92,7 +92,7 @@ function configRoutes() {
                 },
                 {
                     path: 'administrator',
-                    name: 'Indeks Administrator',
+                    name: 'Data Administrator',
                     component: Administrator,
                     meta: {
                         auth: true,
@@ -100,8 +100,17 @@ function configRoutes() {
                     }
                 },
                 {
+                    path: 'administrator/tambah',
+                    name: 'Tambah Administrator',
+                    component: AdministratorCreate,
+                    meta: {
+                        auth: true,
+                        role: ["superadmin"]
+                    }
+                },
+                {
                     path: 'perkawinan',
-                    name: 'Indeks Perkawinan',
+                    name: 'Data Perkawinan',
                     component: Marital,
                     meta: {
                         auth: true,
@@ -128,7 +137,7 @@ function configRoutes() {
                 },
                 {
                     path: 'perceraian',
-                    name: 'Indeks Perceraian',
+                    name: 'Data Perceraian',
                     component: Divorce,
                     meta: {
                         auth: true,
@@ -186,30 +195,9 @@ function configRoutes() {
                     component: Widgets
                 },
                 {
-                    path: 'users',
-                    meta: {
-                        label: 'Users'
-                    },
-                    component: {
-                        render(c) {
-                            return c('router-view')
-                        }
-                    },
-                    children: [
-                        {
-                            path: '',
-                            name: 'Users',
-                            component: Users
-                        },
-                        {
-                            path: ':id',
-                            meta: {
-                                label: 'User Details'
-                            },
-                            name: 'User',
-                            component: User
-                        }
-                    ]
+                    path: 'user/buat',
+                    name: 'Buat User',
+                    component: UserCreate
                 },
                 {
                     path: 'base',

@@ -2,7 +2,7 @@
   <div>
     <CCard>
       <CCardHeader>
-        List Perceraian
+        Data Perceraian
       </CCardHeader>
       <CCardBody>
         <div id="divorceList">

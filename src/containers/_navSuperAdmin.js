@@ -10,8 +10,14 @@ export const navSuperAdmin = [
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Administrator',
+        name: 'Data Administrator',
         to: '/administrator',
+        icon: 'cil-user'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Tambah Administrator',
+        to: '/administrator/tambah',
         icon: 'cil-user'
       }
     ]
